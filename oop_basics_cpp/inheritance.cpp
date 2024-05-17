@@ -11,7 +11,7 @@ class Employee: AbstractEmployee{
   private:
     string name;
     string company;
-    int salary;
+    int age;
   public:
     
     void printInfo(){
@@ -30,7 +30,7 @@ class Employee: AbstractEmployee{
     return name;
   }
 
-  void setAgte(int age){
+  void setAge(int age){
     age = age;
   }
 
@@ -44,10 +44,12 @@ class Developer: Employee{
   public:
     string favProgrammingLanguage;
     Developer(string name, string company, int age, string favProgrammingLanguage): Employee(name, company, age){
+    favProgrammingLanguage = favProgrammingLanguage;
+  }
       void fixBug(){
     cout << getName() << "fixed bug using " << favProgrammingLanguage << endl;
 
-  }
+  
     }
 };
 
