@@ -40,6 +40,10 @@ public:
   int getAge(){
     return age;
   }
+
+   virtual void Work(){
+    cout << Name << "is working" << endl;
+  }
   
 };
 
@@ -60,10 +64,12 @@ class Teacher :public  Employee{
     void prepareLesson(){
       cout << Name << " is preparing " << subject << "lesson" << endl;
     }
-
-
      Teacher(string Name, string company, int age, string subject): Employee(Name, company, age){
         subject = subject;
+  }
+
+  void Work(){
+    cout << Name << "is teaching" << subject << endl;
   }
 };
 
@@ -71,7 +77,11 @@ int main(){
 
   Developer d = Developer("John", "Apple", 30, "C++");
 Teacher t = Teacher("Jane", "Microsoft", 25, "Mathematics");
-  t.prepareLesson();
+  Employee* e1 = &t;
+  Employee* e2 = &d;
+
+  e1->Work();
+  e2->Work();
   return 0;
 }
 
